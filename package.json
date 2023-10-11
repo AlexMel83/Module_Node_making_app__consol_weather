@@ -1,26 +1,23 @@
 {
   "name": "weather",
   "version": "1.0.0",
-  "description": "App for output wether according inputed location",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js current --city Vinnytsia",
-    "prepare": "husky install",
     "test": "node --test .",
-    "lint": "eslint . && prettier -w ."
+    "start": "node index.js",
+    "lint": "eslint . && prettier -w .",
+    "prepare": "husky install",
+    "precommit": "eslint . && prettier -c . && npm run test"
   },
-  "author": "Alexander Meleshko",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "eslint": "^8.51.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.2.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.17.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.2"
   }
 }

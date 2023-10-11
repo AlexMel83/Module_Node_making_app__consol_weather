@@ -3,14 +3,14 @@ import { parseArgs } from "node:util";
 export function parseCommand(args) {
   const options = {
     city: {
-      type: 'string',
-      short: 'c',
+      type: "string",
+      short: "c",
     },
     lat: {
-      type: 'string',
+      type: "string",
     },
     long: {
-      type: 'string',
+      type: "string",
     },
   };
 
@@ -21,11 +21,13 @@ export function parseCommand(args) {
   });
 
   if (positionals.length !== 1) {
-    new Error(`Wrong number of positional arguments: ${positionals.length}`);
+    throw new Error(
+      `Wrong number of positional arguments: ${positionals.length}`,
+    );
   }
 
   return {
     command: positionals[0],
     options: values,
-  }
+  };
 }
