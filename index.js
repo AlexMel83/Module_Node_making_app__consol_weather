@@ -1,4 +1,5 @@
 import { parseCommand } from "./parse-command.js";
+import { getCurrentWeather } from "./command/current.js"
 
 console.log("The Weather CLI App");
 
