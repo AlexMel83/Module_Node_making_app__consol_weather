@@ -1,10 +1,15 @@
-export function getCurrentWeather({ city, lat, long }) {
+export async function getCurrentWeather(weatherProvider, { city, lat, long }) {
   validate({ city, lat, long });
-  const weather = {
-    temperature: 37,
-  };
+
+  const weather = await weatherProvider.getCurrentWeatherByCoordinates(
+    lat,
+    long,
+  );
+
   const location = city ?? `${lat} ${long}`;
-  console.log(`Current weather in ${location}: ${weather.temperature} °C`);
+  console.log(
+    `Current weather in ${location}: ${weather.temperature} °C (time: ${weather.time})`,
+  );
 }
 
 export function validate({ city, lat, long }) {
